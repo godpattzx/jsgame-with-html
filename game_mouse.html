@@ -73,6 +73,10 @@
         var canvas = document.getElementById("paper");
         var targetX = canvas.width / 2;
         var targetY = canvas.height / 2;
+		var shipImage = new Image();
+        shipImage.src = 'path/to/ship.png';
+		var enemyImage = new Image();
+        enemyImage.src = 'path/to/enemy.png';
         var ship = {
             x: canvas.width / 2, 
             y: canvas.height / 2, 
