@@ -69,8 +69,8 @@
             x: canvas.width / 2, 
             y: canvas.height / 2, 
             radius: 10, 
-            color: 'red',
-            v: 200, 
+            color: 'white',
+            v: 150, 
             moveTo: function (x, y, ms) {
                 var st = this.v * ms / 1000;
                 var diffy = y - this.y;
@@ -111,7 +111,7 @@
             enemies.push(new Enemy());
             score += 1;
             document.getElementById('score').innerHTML = '' + score;
-        }, 1000);
+        }, 300);
 
         function draw() {
             if (gameRunning) {
