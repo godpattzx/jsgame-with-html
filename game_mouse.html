@@ -105,13 +105,16 @@
                 if (!enemies[i].isAlive())
                     deadEnemyIndices.push(i);
             }
-            for (var i = deadEnemyIndices.length; i > 0; i--) {
+            for (var i = deadEnemyIndices.length - 1; i >= 0; i--) {
                 enemies.splice(deadEnemyIndices[i], 1);
             }
-            enemies.push(new Enemy());
-            score += 1;
+            for (var i = 0; i < 3; i++) {
+                enemies.push(new Enemy());
+            }
+            score += 3; 
             document.getElementById('score').innerHTML = '' + score;
-        }, 300);
+        }, 500);
+
 
         function draw() {
             if (gameRunning) {
@@ -135,7 +138,7 @@
                 for (var i = 0; i < enemies.length; i++) {
                     context.beginPath();
                     context.arc(enemies[i].x, enemies[i].y, enemies[i].radius, 0, 2 * Math.PI, false);
-                    context.fillStyle = 'green';
+                    context.fillStyle = 'red';
                     context.fill();
                 }
 
@@ -188,7 +191,7 @@
                 this.x = Math.floor(Math.random() * canvas.width);
                 this.y = Math.floor(Math.random() * canvas.height);
                 this.lifetime = 3000;
-                this.radius = 15;
+                this.radius = Math.floor(Math.random() * 5) + 5; 
             }
             live(ms) {
                 this.lifetime -= ms;
