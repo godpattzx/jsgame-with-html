@@ -66,11 +66,11 @@
         var targetX = canvas.width / 2;
         var targetY = canvas.height / 2;
         var ship = {
-            x: 0,
-            y: 0,
-            radius: 5,
+            x: canvas.width / 2, 
+            y: canvas.height / 2, 
+            radius: 10, 
             color: 'red',
-            v: 100,
+            v: 200, 
             moveTo: function (x, y, ms) {
                 var st = this.v * ms / 1000;
                 var diffy = y - this.y;
