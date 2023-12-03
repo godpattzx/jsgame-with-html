@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Game</title>
+    <title>JSGAME.AppleLive</title>
     <style>
         body {
             display: flex;
@@ -18,7 +18,7 @@
         }
 
         button {
-            padding: 70px 25px;
+            padding: 30px 25px;
             font-size: 20px;
             background-color: #19c8c5;
             color: white;
@@ -35,8 +35,8 @@
         #score-container {
             position: absolute;
             top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 40%;
+            transform: translateX(50%);
             text-align: center;
         }
 
@@ -56,14 +56,15 @@
             font-size: 36px;
             color: #e2e2e7;
             text-align: center;
-            margin-bottom: 500px;
+            margin-bottom: 600px;
         }
     </style>
 </head>
 
 <body>
-	<div id="game-title">JSGAME</div>
+	<div id="game-title">AppleRun-Game</div>
     <button onclick="startGame()">Start New Game</button>
+	<button onclick="show()">How to play!</button>
     <div id="score-container">
         <div id="score">Score: 0</div>
     </div>
@@ -202,12 +203,13 @@
             onClick(x, y);
         }, false);
 
+
         class Enemy {
             constructor() {
                 this.x = Math.floor(Math.random() * canvas.width);
                 this.y = Math.floor(Math.random() * canvas.height);
                 this.lifetime = 3000;
-                this.radius = Math.floor(Math.random() * 20) + 15; 
+                this.radius = Math.floor(Math.random() * 15) + 5; 
             }
             live(ms) {
                 this.lifetime -= ms;
@@ -215,6 +217,10 @@
             isAlive() {
                 return this.lifetime > 0;
             }
+        }
+		function show() {
+            var show = "\tวิธีการเล่น\nเคลื่อนที่ลูก Apple หนีรูปเด็ก \n \tTrick : ต้องเล่นให้ได้นาน\nเพื่อที่จะเก็บคะแนนให้มากขึ้น";
+            alert(show);
         }
     </script>
 </html>
