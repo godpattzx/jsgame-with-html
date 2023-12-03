@@ -146,12 +146,16 @@
                 context.arc(ship.x, ship.y, ship.radius, 0, 2 * Math.PI, false);
                 context.fillStyle = ship.color;
                 context.fill();
+				context.drawImage(shipImage, ship.x - ship.radius, ship.y - ship.radius, ship.radius * 2, ship.radius * 2);
+
 
                 for (var i = 0; i < enemies.length; i++) {
                     context.beginPath();
                     context.arc(enemies[i].x, enemies[i].y, enemies[i].radius, 0, 2 * Math.PI, false);
                     context.fillStyle = 'red';
                     context.fill();
+					context.drawImage(enemyImage, enemies[i].x - enemies[i].radius, enemies[i].y - enemies[i].radius, enemies[i].radius * 2, enemies[i].radius * 2);
+
                 }
 
                 lastStamp = currentStamp;
